@@ -45,3 +45,7 @@ class Recipe: EntryDecodable, Resource, FieldKeysQueryable {
         case photo, chef, tags
     }
 }
+
+protocol RecipeHandler {
+    func setRecipe(_ recipe: Recipe)
+}

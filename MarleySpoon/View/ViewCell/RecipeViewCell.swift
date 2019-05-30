@@ -11,7 +11,7 @@ import UIKit
 class RecipeViewCell: UITableViewCell {
     @IBOutlet private weak var previewImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
