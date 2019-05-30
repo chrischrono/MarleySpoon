@@ -18,16 +18,43 @@ class RecipesViewController: UIViewController {
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var loadingView: UIActivityIndicatorView!
     
+    private(set) var recipesViewModel = RecipesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
+        initView()
+        initViewModel()
     }
 
 }
 
-
+//MARK:- viewModel related
+extension RecipesViewController {
+    private func initViewModel() {
+        recipesViewModel.reloadRecipeListViewClosure = { [weak self] in
+            DispatchQueue.main.async {
+                self?.recipeTableView.reloadData()
+            }
+        }
+        recipesViewModel.showStatusViewClosure = { [weak self] (status) in
+            DispatchQueue.main.async {
+                if let status = status {
+                    self?.showStatusView(status)
+                } else {
+                    self?.hideStatusView()
+                }
+            }
+        }
+        recipesViewModel.showLoadingViewClosure = { [weak self] (isLoading) in
+            DispatchQueue.main.async {
+                self?.showLoadingView(isLoading)
+            }
+        }
+        
+        recipesViewModel.getRecipes()
+    }
+}
 
 //MARK:- private func
 extension RecipesViewController {
@@ -69,7 +96,7 @@ extension RecipesViewController {
 }
 
 //MARK:- tableView func
-extension RecipesViewController: UITableViewDataSource {
+extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     private func initTableView() {
         recipeTableView.register(UINib(nibName: "RecipeViewCell", bundle: nil), forCellReuseIdentifier: "RecipeViewCell")
         
@@ -82,16 +109,16 @@ extension RecipesViewController: UITableViewDataSource {
     }
     
     @objc private func handleReshresh(_ refreshControl: UIRefreshControl?) {
-        //recipesViewModel.getCurrentLocation()
+        recipesViewModel.getRecipes()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0//recipesViewModel.getFilteredCountryCount()
+        return recipesViewModel.getRecipesCount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeViewCell", for: indexPath) as! CountryViewCellRecipeViewCell        cell.configureCell(model: countrySearchViewModel.getRecipeCellViewModel(at: indexPath.row))
-        return cell*/
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeViewCell", for: indexPath) as! RecipeViewCell
+        recipesViewModel.getRecipe(handler: cell.recipeCellViewModel, index: indexPath.row)
+        return cell
     }
     
 }

@@ -29,7 +29,8 @@ class NetworkManager: NetworkProtocol {
         self.accessToken = accessToken
         client = Client(spaceId: spaceId,
                         environmentId: "master",
-                        accessToken: accessToken)
+                        accessToken: accessToken,
+                        contentTypeClasses: [Recipe.self, Chef.self, Tag.self])
     }
     
     func getRecipes(completion: @escaping (_ recipes: [Recipe]?,_ error: String?)->()) {
@@ -42,10 +43,6 @@ class NetworkManager: NetworkProtocol {
             }
         }
     }
-    
-    
-    
-    
     
     func testContentfull() {
         /*client.fetchSpace (then: { (result) in
