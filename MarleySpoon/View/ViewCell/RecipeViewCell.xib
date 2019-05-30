@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RecipeViewCell" customModule="MarleySpoon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="180.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecipePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-YP-s8o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="HfW-YP-s8o" secondAttribute="width" multiplier="9:16" id="TO0-cz-qse"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57h-nd-m72">
+                        <rect key="frame" x="0.0" y="148" width="320" height="32"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPn-zu-oJE">
+                                <rect key="frame" x="20" y="8.5" width="280" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fPn-zu-oJE" firstAttribute="centerX" secondItem="57h-nd-m72" secondAttribute="centerX" id="5XM-Q9-UUU"/>
+                            <constraint firstAttribute="height" constant="32" id="Yw8-dG-FHD"/>
+                            <constraint firstItem="fPn-zu-oJE" firstAttribute="width" secondItem="57h-nd-m72" secondAttribute="width" constant="-40" id="eoH-wp-VMd"/>
+                            <constraint firstItem="fPn-zu-oJE" firstAttribute="centerY" secondItem="57h-nd-m72" secondAttribute="centerY" id="f57-mM-ywk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HfW-YP-s8o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1qt-iB-u3N"/>
+                    <constraint firstItem="HfW-YP-s8o" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="4iy-4o-sBZ"/>
+                    <constraint firstItem="57h-nd-m72" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="B1h-Dg-bIz"/>
+                    <constraint firstItem="57h-nd-m72" firstAttribute="bottom" secondItem="HfW-YP-s8o" secondAttribute="bottom" id="Njg-fo-Q8Q"/>
+                    <constraint firstAttribute="bottom" secondItem="HfW-YP-s8o" secondAttribute="bottom" id="NlR-7S-3j2"/>
+                    <constraint firstItem="HfW-YP-s8o" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oYZ-H2-Lm3"/>
+                    <constraint firstItem="57h-nd-m72" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="tGu-lo-WiR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="previewImageView" destination="HfW-YP-s8o" id="ydm-FP-bLt"/>
+                <outlet property="titleLabel" destination="fPn-zu-oJE" id="d5c-DC-XP2"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="RecipePlaceholder" width="320" height="164"/>
+    </resources>
+</document>
