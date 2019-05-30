@@ -32,6 +32,7 @@ class RecipesViewModel {
     var reloadRecipeListViewClosure: (()->())?
     var showStatusViewClosure: ((String?)->())?
     var showLoadingViewClosure: ((Bool)->())?
+    var showDetailViewClosure: ((Int)->())?
 }
 
 //MARK:- getRecipes related
@@ -67,5 +68,8 @@ extension RecipesViewModel {
     }
     func getRecipe(handler: RecipeHandler, index: Int) {
         handler.setRecipe(recipes[index])
+    }
+    func userSelectRecipe(at index: Int) {
+        showDetailViewClosure?(index)
     }
 }

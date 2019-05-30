@@ -23,6 +23,9 @@
 		FA02BA88229FFD9400619111 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02BA87229FFD9400619111 /* NetworkManager.swift */; };
 		FA9AD4AC22A012E100656C62 /* RecipeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AD4AB22A012E100656C62 /* RecipeCellViewModel.swift */; };
 		FA9AD4AE22A0200D00656C62 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AD4AD22A0200D00656C62 /* RecipeDetailViewController.swift */; };
+		FAFE633622A0926C00764F6E /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE633522A0926C00764F6E /* RecipeDetailViewModel.swift */; };
+		FAFE633922A09BAA00764F6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAFE633B22A09BAA00764F6E /* Localizable.strings */; };
+		FAFE633F22A09E7B00764F6E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE633E22A09E7B00764F6E /* StringExtension.swift */; };
 		FE391A5CCC3A057798F2AEAC /* Pods_MarleySpoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8B52D48DC77133554DA276 /* Pods_MarleySpoon.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		FA02BA87229FFD9400619111 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA9AD4AB22A012E100656C62 /* RecipeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewModel.swift; sourceTree = "<group>"; };
 		FA9AD4AD22A0200D00656C62 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		FAFE633522A0926C00764F6E /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		FAFE633A22A09BAA00764F6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAFE633E22A09E7B00764F6E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 		FA01F870229C8CBD0018645A /* MarleySpoon */ = {
 			isa = PBXGroup;
 			children = (
+				FAFE633C22A09E4E00764F6E /* Helper */,
 				FA02BA86229FFD7E00619111 /* Service */,
 				FA01F893229C8D190018645A /* Model */,
 				FA01F892229C8D160018645A /* View */,
@@ -136,6 +143,7 @@
 				FA01F878229C8CBE0018645A /* Assets.xcassets */,
 				FA01F87A229C8CBE0018645A /* LaunchScreen.storyboard */,
 				FA01F87D229C8CBE0018645A /* Info.plist */,
+				FAFE633B22A09BAA00764F6E /* Localizable.strings */,
 			);
 			path = MarleySpoon;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			children = (
 				FA02BA7F229FF27800619111 /* RecipesViewModel.swift */,
 				FA9AD4AB22A012E100656C62 /* RecipeCellViewModel.swift */,
+				FAFE633522A0926C00764F6E /* RecipeDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +202,22 @@
 				FA02BA87229FFD9400619111 /* NetworkManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FAFE633C22A09E4E00764F6E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE633D22A09E5E00764F6E /* Extension */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FAFE633D22A09E5E00764F6E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE633E22A09E7B00764F6E /* StringExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFE633922A09BAA00764F6E /* Localizable.strings in Resources */,
 				FA01F87C229C8CBE0018645A /* LaunchScreen.storyboard in Resources */,
 				FA01F879229C8CBE0018645A /* Assets.xcassets in Resources */,
 				FA02BA84229FF7F200619111 /* RecipeViewCell.xib in Resources */,
@@ -373,11 +399,13 @@
 			files = (
 				FA02BA80229FF27800619111 /* RecipesViewModel.swift in Sources */,
 				FA9AD4AC22A012E100656C62 /* RecipeCellViewModel.swift in Sources */,
+				FAFE633622A0926C00764F6E /* RecipeDetailViewModel.swift in Sources */,
 				FA02BA7A229FEE0200619111 /* Recipe.swift in Sources */,
 				FA01F874229C8CBD0018645A /* RecipesViewController.swift in Sources */,
 				FA02BA7E229FF0DC00619111 /* Tag.swift in Sources */,
 				FA02BA88229FFD9400619111 /* NetworkManager.swift in Sources */,
 				FA01F872229C8CBD0018645A /* AppDelegate.swift in Sources */,
+				FAFE633F22A09E7B00764F6E /* StringExtension.swift in Sources */,
 				FA02BA7C229FF0D200619111 /* Chef.swift in Sources */,
 				FA9AD4AE22A0200D00656C62 /* RecipeDetailViewController.swift in Sources */,
 				FA02BA83229FF7F200619111 /* RecipeViewCell.swift in Sources */,
@@ -417,6 +445,14 @@
 				FA01F87B229C8CBE0018645A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FAFE633B22A09BAA00764F6E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAFE633A22A09BAA00764F6E /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

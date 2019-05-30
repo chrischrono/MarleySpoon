@@ -26,6 +26,12 @@ class RecipesViewController: UIViewController {
         initView()
         initViewModel()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "recipeDetailSegue", let vc = segue.destination as? RecipeDetailViewController, let index = sender as? Int {
+            recipesViewModel.getRecipe(handler: vc.recipeDetailViewModel, index: index)
+        }
+    }
 
 }
 
@@ -51,6 +57,9 @@ extension RecipesViewController {
                 self?.showLoadingView(isLoading)
             }
         }
+        recipesViewModel.showDetailViewClosure = { [weak self] (index) in
+            self?.performSegue(withIdentifier: "recipeDetailSegue", sender: index)
+        }
         
         recipesViewModel.getRecipes()
     }
@@ -68,7 +77,7 @@ extension RecipesViewController {
             hideStatusView()
             return
         }
-        statusLabel.text = status//.localized()
+        statusLabel.text = status.localized()
         statusViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
@@ -119,6 +128,9 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeViewCell", for: indexPath) as! RecipeViewCell
         recipesViewModel.getRecipe(handler: cell.recipeCellViewModel, index: indexPath.row)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        recipesViewModel.userSelectRecipe(at: indexPath.row)
     }
     
 }
