@@ -22,6 +22,7 @@
 		FA02BA84229FF7F200619111 /* RecipeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA02BA82229FF7F200619111 /* RecipeViewCell.xib */; };
 		FA02BA88229FFD9400619111 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02BA87229FFD9400619111 /* NetworkManager.swift */; };
 		FA9AD4AC22A012E100656C62 /* RecipeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AD4AB22A012E100656C62 /* RecipeCellViewModel.swift */; };
+		FA9AD4AE22A0200D00656C62 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AD4AD22A0200D00656C62 /* RecipeDetailViewController.swift */; };
 		FE391A5CCC3A057798F2AEAC /* Pods_MarleySpoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8B52D48DC77133554DA276 /* Pods_MarleySpoon.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		FA02BA82229FF7F200619111 /* RecipeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeViewCell.xib; sourceTree = "<group>"; };
 		FA02BA87229FFD9400619111 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA9AD4AB22A012E100656C62 /* RecipeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewModel.swift; sourceTree = "<group>"; };
+		FA9AD4AD22A0200D00656C62 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				FA02BA85229FF7F900619111 /* ViewCell */,
 				FA01F873229C8CBD0018645A /* RecipesViewController.swift */,
+				FA9AD4AD22A0200D00656C62 /* RecipeDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				FA02BA88229FFD9400619111 /* NetworkManager.swift in Sources */,
 				FA01F872229C8CBD0018645A /* AppDelegate.swift in Sources */,
 				FA02BA7C229FF0D200619111 /* Chef.swift in Sources */,
+				FA9AD4AE22A0200D00656C62 /* RecipeDetailViewController.swift in Sources */,
 				FA02BA83229FF7F200619111 /* RecipeViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
